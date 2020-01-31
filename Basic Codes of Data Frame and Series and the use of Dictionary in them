@@ -1,0 +1,26 @@
+raw_data = {"name": ['Bulbasaur', 'Charmander','Squirtle','Caterpie'],
+            "evolution": ['Ivysaur','Charmeleon','Wartortle','Metapod'],
+            "type": ['grass', 'fire', 'water', 'bug'],
+            "hp": [45, 39, 44, 45],
+            "pokedex": ['yes', 'no','yes','no']                        
+            }
+            
+//Assigning the dictionary to a Series
+
+pokemon=pd.Series(raw_data)
+print(pokemon)
+
+//Assigning the dictionary to a Data Frame and changing the order of the columns as name, type, hp, evolution, pokedex
+
+DF_Pokemon=pd.DataFrame(raw_data)
+DF_Pokemon=DF_Pokemon[['name','type','hp','evolution','pokedex']]
+DF_Pokemon
+
+// Adding a new Column to the Data Frame
+
+DF_Pokemon=DF_Pokemon.assign(place=('lakes','park','hills','etc'))
+DF_Pokemon
+
+//Checking the type of each column of the Data Frame
+
+DF_Pokemon.dtypes
